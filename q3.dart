@@ -1,13 +1,12 @@
-import 'dart:io';
+void main(){
+  print("Desconto = ${desconto(1050)}");
+  print("Desconto = ${desconto(1200, 20)}");
+}
 
-void main() {
-  print("Digite um número:");
-  int numero = int.parse(stdin.readLineSync()!);
-  List<int> divisores = [];
-  for (int i = 1; i <= numero; i++) {
-    if (numero % i == 0) {
-      divisores.add(i);
-    }
+double desconto(double preco, [double? percentual]){
+  if (percentual == null) {
+    percentual = 10;
+    print("Percentual não informado. Usando 10% como padrão.");
   }
-  print("Os divisores de $numero são: $divisores");
+  return preco - (preco * percentual! / 100);
 }
