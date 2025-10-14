@@ -1,16 +1,8 @@
-void main(){
-  print("Média = ${media([7, 8, 6, 9, 5])}");
-}
-
-int soma(int a, int b){
-  return a + b;
-}
-
-double media(List<int> notas){
-  var somaNotas = 0;
-  for(var nota in notas){
-    somaNotas = soma(somaNotas, nota);
+void main() {
+  List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+  for (int numero in a) {
+    if (numero < 5) {
+      print(numero);
+    }
   }
-  return somaNotas / notas.length;
-  
 }

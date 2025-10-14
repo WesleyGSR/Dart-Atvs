@@ -1,23 +1,18 @@
+import 'dart:io';
+
 void main() {
-  print(calcularPontosEnergia(20, [3, 5]));
-  print(calcularPontosEnergia(10, [2]));
-  print(calcularPontosEnergia(15, [4, 6]));
-  print(calcularPontosEnergia(30, [3, 5, 7]));
-}
+  print("Fale algo com Bob:");
+  String frase = stdin.readLineSync()!;
 
-int calcularPontosEnergia(int nivel, List<int> valoresBase) {
-  Set<int> multiplosUnicos = {};
-
-  for (int valor in valoresBase) {
-    for (int i = valor; i < nivel; i += valor) {
-      multiplosUnicos.add(i);
-    }
+  if (frase.trim().isEmpty) {
+    print("Tudo bem. Seja desse jeito!");
+  } else if (frase == frase.toUpperCase() && frase.endsWith("?")) {
+    print("Calma, eu sei o que estou fazendo!");
+  } else if (frase == frase.toUpperCase()) {
+    print("Uau, relaxe!");
+  } else if (frase.endsWith("?")) {
+    print("Ok.");
+  } else {
+    print("Tanto faz.");
   }
-
-  int soma = 0;
-  for (var n in multiplosUnicos) {
-    soma += n;
-  }
-
-  return soma;
 }
