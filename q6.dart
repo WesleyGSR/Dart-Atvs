@@ -1,27 +1,20 @@
-void main(){
-  print(raindrops(35));
-  print(raindrops(30));
-  print(raindrops(34));
-}
+import 'dart:io';
+import 'dart:math';
 
-String raindrops(int num) {
-  String result = '';
+void main() {
+  List<String> opcoes = ["pedra", "papel", "tesoura"];
+  print("Escolha (pedra, papel ou tesoura):");
+  String jogador = stdin.readLineSync()!.toLowerCase();
+  String computador = opcoes[Random().nextInt(opcoes.length)];
+  print("Computador escolheu: $computador");
 
-  if (num % 3 == 0) {
-    result += 'Pling';
+  if (jogador == computador) {
+    print("Empate!");
+  } else if ((jogador == "pedra" && computador == "tesoura") ||
+             (jogador == "papel" && computador == "pedra") ||
+             (jogador == "tesoura" && computador == "papel")) {
+    print("Você venceu!");
+  } else {
+    print("Computador venceu!");
   }
-  if (num % 5 == 0) {
-    result += 'Plang';
-  }
-  if (num % 7 == 0) {
-    result += 'Plong';
-  }
-  if (num % 3 != 0 && num % 5 != 0 && num % 7 != 0) {
-    result = num.toString();
-  }
-  if(num == 0){
-    result = '0';
-  }
-
-  return result;
 }

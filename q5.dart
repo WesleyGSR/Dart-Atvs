@@ -1,8 +1,12 @@
-void main(){
-  int Function(int, int) operacao = multiplicar;
-  print("Resultado da multiplicação: ${operacao(5, 4)}");
-}
+void main() {
+  List<int> a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+  List<int> pares = [];
 
-int multiplicar(int a, int b){
-  return a * b;
+  for (int i = 0; i < a.length; i++) {
+    if (a[i] % 2 == 0) {
+      pares.add(a[i]);
+    }
+  }
+
+  print("Elementos pares: $pares");
 }
