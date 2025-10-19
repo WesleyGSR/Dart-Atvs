@@ -8,5 +8,5 @@ double desconto(double preco, [double? percentual]){
     percentual = 10;
     print("Percentual não informado. Usando 10% como padrão.");
   }
-  return preco - (preco * percentual! / 100);
+  return preco - (preco * percentual / 100);
 }
