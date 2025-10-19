@@ -1,16 +1,11 @@
-class Animal{
+abstract class Animal{
   String nome;
   int idade;
 
   Animal(this.nome, this.idade);
 
-  void fazerSom() {
-    print("Som de animal");
-  }
-  void acao(){
-    print("O animal está se movendo");
-  }
-
+  void fazerSom();
+  void acao();
 }
 
 class Cachorro extends Animal{
